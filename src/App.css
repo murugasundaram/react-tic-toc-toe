@@ -1,38 +1,117 @@
-.App {
+
+.bg-game {
+  background-color: #587d52;
+}
+
+.player-div {
+  background-color: white;
   text-align: center;
+  margin-top: 25px;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  width: 30%;
+  height: 100px;
+  box-shadow: 1px 3px 2px 0px #0000005e;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.player-points-div {
+  border: 1px solid white;
+  text-align: center;
+  width: 30%;
+  margin-top: 25px;
+  border-radius: 12px;
+  color: #f9bc3f;
+  font-size: 0.8rem;
+  padding: 2px 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.player-middle {
+  margin-top: 15px;
+  line-height: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.player-image {
+  width: 60px;
+  height: 55px;
+  border-radius: 55px;
+  margin-top: -25px;
 }
 
-.App-link {
-  color: #61dafb;
+.player-identity {
+  background-color: #587d52;
+  margin: 6px 20% 0px 20%;
+  text-align: center;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.timer-div {
+  background-color: #feb438;
+  height: 85px;
+  width: 85px;
+  text-align: center;
+  border-radius: 100px;
 }
+
+.timer-div .remain-text {
+  font-size: 0.7rem;
+  padding: 0px 5px;
+  line-height: 1.1rem;
+}
+
+.timer-div .remain-time {
+  font-size: 1.5rem;
+}
+
+.player1-icon {
+  color: yellow;
+}
+
+.player2-icon {
+  color: red;
+}
+
+.game-table tbody tr td  {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.player-turn {
+  margin-top: 30px;
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+
+.player-turn.player1 {
+  background-color: #feb438;;
+}
+
+.game-table tbody tr td div {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #ffffff;
+  border-radius: 6px;
+}
+
+.chat-div {
+  float: right;
+  background-color: white;
+  padding: 3px 10px;
+  border-radius: 10px;
+  color: #feb438;
+}
+
+.before::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px); /* Adjust the blur value as needed */
+}
+

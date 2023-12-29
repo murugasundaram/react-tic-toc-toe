@@ -1,11 +1,14 @@
-import { faComments } from "@fortawesome/free-solid-svg-icons";
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
-    <footer className="fixed bottom-0 left-0 w-full p-4">
-      <div className="chat-div">
-        <FontAwesomeIcon icon={faComments } size="md" />
+    <footer className="p-4 h-[10%]">
+      <div className="chat-div" onClick={() => navigate('/')}>
+        <FontAwesomeIcon icon={faRightFromBracket} size="md" className="pr-1 text-red" /> Exit the Game
       </div>
     </footer>
   );

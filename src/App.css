@@ -86,20 +86,22 @@
 }
 
 .game-table tbody tr td div {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  width: 3rem;
-  height: 3rem;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
+  width: 4rem;
+  height: 4rem;
   background-color: #ffffff;
-  border-radius: 6px;
+  border-radius: 11px;
+  cursor: pointer;
 }
 
 .chat-div {
   float: right;
-  background-color: white;
+  background-color: #FFEBEE;
   padding: 3px 10px;
   border-radius: 10px;
-  color: #feb438;
+  color: #aa0b05;
+  cursor: default;
 }
 
 .before::before {
@@ -115,3 +117,14 @@
   filter: blur(10px); /* Adjust the blur value as needed */
 }
 
+.m-all-center {
+  display: flex;
+  vertical-align: middle;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.m-all-center.stretch {
+  align-items: stretch;
+}

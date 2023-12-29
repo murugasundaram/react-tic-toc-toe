@@ -3,7 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import red from "../../Assets/red.jpeg";
 import yellow from "../../Assets/yellow.jpeg";
 
-const Header = () => {
+const Header = (props) => {
+  const p1 = props.game && props.game.players ? props.game.players[0] : '';
+  const p2 = props.game && props.game.players ? props.game.players[1] : '';
+
   return (
     <header className="w-full p-4 div1 m-all-center">
       <div>
@@ -15,7 +18,7 @@ const Header = () => {
             </div>
 
             <div className="text-center ml-auto mr-auto player-middle">
-              <span className="font-bold text-lg">Muruga</span>
+              <span className="font-bold text-lg">{p1}</span>
               <span className="block text-sm player-identity">
                 <FontAwesomeIcon className="player1-icon" icon={faXmark} />
               </span>
@@ -33,7 +36,7 @@ const Header = () => {
             <img src={red} className="player-image" alt="Player" />
           </div>
           <div className="text-center ml-auto mr-auto player-middle">
-            <span className="font-bold text-lg">Baskaran</span>
+            <span className="font-bold text-lg">{p2}</span>
             <span className="block text-sm player-identity">
               <FontAwesomeIcon className="player2-icon" icon={faO} />
             </span>

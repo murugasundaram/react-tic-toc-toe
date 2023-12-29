@@ -47,6 +47,7 @@
   margin: 6px 20% 0px 20%;
   text-align: center;
   border-radius: 10px;
+  min-width: 40px;
 }
 
 .timer-div {
@@ -111,6 +112,11 @@
   background-color: #ffffff;
   border-radius: 11px;
   cursor: pointer;
+}
+
+.game-table tbody tr td.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .chat-div {
@@ -181,4 +187,9 @@
   display: grid;
     justify-items: end;
     align-items: center;
+}
+
+input.error {
+  background-color: #FFCDD2;
+  border: 1px solid red;
 }

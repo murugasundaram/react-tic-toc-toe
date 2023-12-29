@@ -1,32 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { TableData } from "../Helpers/TableData";
+
+
 
 const gameSlice = createSlice({
     name: 'game',
     initialState: {
-        games: [
-            {
-                p1: 'Muruga',
-                p2: 'Bas',
-                totalRounds: 5,
-                currentRound: 1,
-                rounds: [
-                    { 
-                        won: 'Muruga',
-                        loss: 'Bas',
-                        moves: {
-                            p1 : [1,3,4],
-                            p2 : [2,5,6]
-                        },
-                        playingNow: 'p1',
-                        status: 'completed'
-                    }
-                ]
-            }
-        ]
+        table: TableData,
+        games: []
     },
     reducers : {
-        setName(state, action) {
-            state.name = 'Bas'
+        playingGame(state, action) {
+            let data = action.payload;
+            let nxtPlay = 1;
+            
+            if(data.playingNow == 1) nxtPlay = 0;
+
+            state.table[data.row][data.column].whoClicked = data.playingNow;
+            state.games[(data.gameId - 1)].rounds[(data.roundId - 1)].moves[data.playingNow].push(data.index)
+            state.games[(data.gameId - 1)].rounds[(data.roundId - 1)].playingNow = nxtPlay;
+        }, 
+        createNewGame(state, action) {
+            state.games.push(action.payload.newGame)
         }
     }
 });

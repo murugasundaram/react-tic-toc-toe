@@ -128,3 +128,39 @@
 .m-all-center.stretch {
   align-items: stretch;
 }
+
+
+.game-body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh; /* Set the height of the body to 100% of the viewport height */
+}
+
+/* Set the height of each div based on the percentage of the viewport height */
+.div1 {
+  height: 30vh;
+}
+
+.div2 {
+  height: 50vh;
+}
+
+.div3 {
+  height: 10vh;
+}
+
+.div4 {
+  height: 10vh;
+}
+
+.turn-div {
+  display: grid;
+    align-items: start;
+}
+
+.footer-div {
+  display: grid;
+    justify-items: end;
+    align-items: center;
+}

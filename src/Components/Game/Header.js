@@ -5,7 +5,7 @@ import yellow from "../../Assets/yellow.jpeg";
 
 const Header = () => {
   return (
-    <header className="w-full p-4 h-[30%] m-all-center">
+    <header className="w-full p-4 div1 m-all-center">
       <div>
         <div className="flex items-center">
 

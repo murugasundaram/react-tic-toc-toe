@@ -3,6 +3,11 @@
   background-color: #587d52;
 }
 
+.t-t-t {
+  font-size: 60px;
+  margin-bottom: 60px;
+}
+
 .player-div {
   background-color: white;
   text-align: center;
@@ -82,7 +87,20 @@
 }
 
 .player-turn.player1 {
-  background-color: #feb438;;
+  background-color: #feb438;
+}
+
+.player-name {
+  color: #feb438;;
+}
+
+.player-details-input {
+  border-radius: 10px;
+    margin-top: 10px;
+}
+
+.player-details-div {
+  padding: 20px 12%;
 }
 
 .game-table tbody tr td div {

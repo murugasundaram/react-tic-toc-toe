@@ -5,6 +5,7 @@ import Landing from './Pages/Landing';
 import NewGame from './Pages/NewGame';
 import store from './Store';
 import { Provider } from 'react-redux';
+import FillDetails from './Pages/FillDetails';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path='/' element={<Landing />} />
-            <Route path='/newgame' element={<NewGame />} />
+            <Route path='/game/details' element={<FillDetails />} />
+            <Route path='/game/play' element={<NewGame />} />
         </Routes>
       </BrowserRouter>
     </Provider>

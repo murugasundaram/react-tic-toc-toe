@@ -14,7 +14,7 @@ const GradientButton = () => {
   };
 
   return (
-    <button style={buttonStyle} onClick={() => navigate('/newgame')}>
+    <button style={buttonStyle} onClick={() => navigate('/game/details')}>
       Start
     </button>
   );

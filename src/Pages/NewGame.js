@@ -25,8 +25,6 @@ const NewGame = () => {
     }
   }, [currentGame])
 
-  console.log('resGame', resGame)
-
   const gameOver = () => {
     let scores = currentGame.scores;
     let players = currentGame.players;
@@ -39,12 +37,23 @@ const NewGame = () => {
       winningScore = scores[1];
     }
 
-    dispatch(resultAction.postResult({
+    let scoreObj = {
       winner,
       winningScore
-    }));
+    }
 
+    dispatch(resultAction.postResult(scoreObj));
+    storeTheScore(scoreObj);
     navigate('/game/winner');
+  }
+
+  const storeTheScore = (scoreObj) => {
+    let existScore = localStorage.getItem('tic');
+    let score = existScore ? JSON.parse(existScore) : [];
+    console.log(score)
+    score.push(scoreObj);
+    console.log(score)
+    localStorage.setItem('tic', JSON.stringify(score))
   }
 
   if(currentGame === null) {

@@ -8,10 +8,12 @@ const GameWinner = () => {
     const results = useSelector(state => state.result.results);
     const copyRes = [ ...results ]
     const lastRes = copyRes.pop();
+    const winningScore = lastRes && lastRes.winningScore ? lastRes.winningScore : 0;
+
     let starIcons = [];
 
-    for (let i = 0; i < lastRes.winningScore; i++) {
-        starIcons.push(<FontAwesomeIcon key={i} icon={faStar} className={`star star-${i+1}-${lastRes.winningScore}`} />)
+    for (let i = 0; i < winningScore; i++) {
+        starIcons.push(<FontAwesomeIcon key={i} icon={faStar} className={`star star-${i+1}-${winningScore}`} />)
     }
 
     return <div className="game-body bg-game overflow-y-hidden d-flex align-items-center justify-content-center">
@@ -23,7 +25,7 @@ const GameWinner = () => {
                 {starIcons.map((star, index) => star)}
             </div>
             <div className='text-white text-center won-head'>
-                {lastRes.winner} Won {lastRes.winningScore} stars
+                {lastRes ? lastRes.winner : ''} Won {winningScore} stars
             </div>
         </div>
         <div className='text-center'> 

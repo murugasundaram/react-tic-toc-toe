@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+let scores = localStorage.getItem('tic');
+let setScores = scores ? JSON.parse(scores) : [];
+
 const resultSlice = createSlice({
     name: 'result',
     initialState: {
-        results: [
-            
-        ]
+        results: setScores
     },
     reducers: {
         postResult(state, action) {

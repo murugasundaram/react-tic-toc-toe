@@ -7,6 +7,7 @@ import store from './Store';
 import { Provider } from 'react-redux';
 import FillDetails from './Pages/FillDetails';
 import GameWinner from './Pages/GameWinner';
+import Scores from './Pages/Scores';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path='/game/details' element={<FillDetails />} />
             <Route path='/game/play' element={<NewGame />} />
             <Route path='/game/winner' element={<GameWinner />} />
+            <Route path='/game/scores' element={<Scores />} />
         </Routes>
       </BrowserRouter>
     </Provider>

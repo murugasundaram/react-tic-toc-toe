@@ -27,7 +27,7 @@ const GameWinner = () => {
             </div>
         </div>
         <div className='text-center'> 
-            <button className="show-score-btn" onClick={() => navigate('/')}>View Scoreboard</button>
+            <button className="show-score-btn" onClick={() => navigate('/game/scores')}>View Scoreboard</button>
         </div>
     </div>
 }

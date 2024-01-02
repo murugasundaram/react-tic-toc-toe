@@ -4,7 +4,7 @@ const resultSlice = createSlice({
     name: 'result',
     initialState: {
         results: [
-            {winner: 'Muruga', winningScore: 3}, {winner: 'Baskaran', winningScore: 5}
+            
         ]
     },
     reducers: {

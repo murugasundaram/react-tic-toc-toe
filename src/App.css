@@ -238,3 +238,75 @@ input.error {
   right: 15%;
   bottom: 5vh;
 }
+
+.score-box {
+  background-color: #587d52;
+  width: 70%;
+  min-height: 40vh;
+  border-radius: 15px;
+  border: 2px solid #FFFDE7;
+}
+
+.score-center {
+  background-color: #587d52;
+  height: 50vh;
+  overflow-y: auto;
+  border-radius: 15px;
+  padding-bottom: 25px;
+}
+
+.score-top {
+  background-color: #fbc84c;
+  height: 50px;
+  position: relative;
+  top: -25px;
+  width: 70%;
+  left: 15%;
+  border-radius: 50px 50px 15px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.score-bottom {
+  background-color: #fbc84c;
+  height: 60px;
+  position: absolute;
+  bottom: -30px;
+  width: 70%;
+  left: 15%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.one-score {
+  background-color: white;
+  color: black;
+  margin: 10px 5%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.score-name {
+  float: left;
+}
+
+.score-star {
+  float: right;
+  color: #fbc84c !important;
+}

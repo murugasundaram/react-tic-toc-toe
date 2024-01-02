@@ -30,7 +30,9 @@ const FillDetails = () => {
         return
       } 
 
-      let newGame = { ...newGameObj };
+      //let newGame = { ...newGameObj };
+      var newGame = Object.assign({}, newGameObj);
+      console.log('newGame', newGame)
       newGame.id = game.length + 1;
       newGame.players[0] = p1;
       newGame.players[1] = p2;

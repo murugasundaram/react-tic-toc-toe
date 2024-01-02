@@ -193,3 +193,48 @@ input.error {
   background-color: #FFCDD2;
   border: 1px solid red;
 }
+
+.winner-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.congrts-head {
+  font-size: 30px;
+}
+
+.won-head {
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+.stars-div {
+  display: flex;
+  margin-top: 20px;
+  color: #fed65c;
+  align-items: center;
+  justify-content: center;
+}
+
+.stars-div .star {
+  font-size: 50px;
+  padding: 5px;
+}
+
+.star-2-3, .star-1-1, .star-3-5 {
+  font-size: 100px !important;
+}
+
+.show-score-btn {
+  width: 70%;
+  padding: 15px 12px;
+  background-color: #e9ebcc;
+  border-radius: 7px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: -1px 0px 5px 4px #e9ebcc40;
+  position: fixed;
+  right: 15%;
+  bottom: 5vh;
+}

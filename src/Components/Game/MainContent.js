@@ -9,8 +9,9 @@ import { ModalAction } from "../../Store/modal";
 
 const MainContent = (props) => {
 
-  const players = props.game ? props.game.players : ['', ''];
-  const rounds = props.game ? props.game.rounds.filter(x => !x.isCompleted) : [];
+  const theGame = props.game ? props.game : [];
+  const players = theGame && theGame.players ? theGame.players : ['', ''];
+  const rounds = theGame && theGame.rounds ? theGame.rounds.filter(x => !x.isCompleted) : [];
   const currentRound = rounds ? rounds[0] : []
   const playingNow = currentRound && currentRound.playingNow ? currentRound.playingNow : 0;
   const table = useSelector(state => state.game.table);
@@ -25,7 +26,7 @@ const MainContent = (props) => {
       index,
       row,
       column,
-      gameId: props.game.id,
+      gameId: theGame.id,
       roundId: currentRound.id,
       playingNow: playingNow
     }
@@ -71,9 +72,18 @@ const MainContent = (props) => {
     }
 
     if(winner == '0' || winner == '1') {
-      let winnerText = `Round 1 Winner is ${players[winner]}`;
-      dispatch(ModalAction.setContent(winnerText));
-      dispatch(ModalAction.openModal())
+
+      if(theGame.totalRounds > theGame.currentRound) {
+        let winnerText = `Round ${currentRound.id} Winner is ${players[winner]}`;
+        dispatch(ModalAction.setContent(winnerText));
+        dispatch(ModalAction.openModal())
+      }
+      
+      dispatch(gameAction.setWinner({ 
+        gameId: theGame.id,
+        roundId: currentRound.id, 
+        winner: winner 
+      }));
     }    
   }
 

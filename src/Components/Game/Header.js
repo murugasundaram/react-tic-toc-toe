@@ -7,6 +7,9 @@ const Header = (props) => {
   const p1 = props.game && props.game.players ? props.game.players[0] : '';
   const p2 = props.game && props.game.players ? props.game.players[1] : '';
 
+  const rounds = props.game ? props.game.rounds : [];
+  const scores = props.game ? props.game.scores : [0,0];
+
   return (
     <header className="w-full p-4 div1 m-all-center">
       <div>
@@ -46,10 +49,10 @@ const Header = (props) => {
         </div>
         <div className="flex items-center">
           <div className="player-points-div">
-            Points: 0
+            Points: {scores[0]} / {rounds ? rounds.length : 0}
           </div>
           <div className="player-points-div ml-auto">
-            Points: 0
+            Points: {scores[1]} / {rounds ? rounds.length : 0}
           </div>
         </div>
       </div>

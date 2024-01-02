@@ -70,7 +70,8 @@ export const newGameObj = {
     totalRounds: 3,
     currentRound: 1,
     isCompleted: false,
-    rounds: []
+    rounds: [],
+    scores: [0, 0]
 };
 
 export const singleRound = {

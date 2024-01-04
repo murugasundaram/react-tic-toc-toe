@@ -11,6 +11,9 @@ const resultSlice = createSlice({
     reducers: {
         postResult(state, action) {
             state.results.push(action.payload);
+        },
+        clearResult(state) {
+            state.results = []
         }
     }
 });

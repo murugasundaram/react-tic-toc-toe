@@ -239,12 +239,20 @@ input.error {
   bottom: 5vh;
 }
 
+.above-score-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .score-box {
   background-color: #587d52;
   width: 70%;
   min-height: 40vh;
   border-radius: 15px;
   border: 2px solid #FFFDE7;
+  margin-bottom: 20px; /* Adjust as needed */
 }
 
 .score-center {
@@ -309,4 +317,16 @@ input.error {
 .score-star {
   float: right;
   color: #fbc84c !important;
+}
+
+.reset-button {
+  margin-top: 30px; /* Adjust as needed */
+}
+
+.reset-button button {
+  color: white;
+  background-color: #E91E63;
+  padding: 2px 15px;
+  border-radius: 10px;
+  font-size: 15px;
 }

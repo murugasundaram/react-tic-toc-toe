@@ -77,6 +77,7 @@ export let singleRound = {
     id: 0,
     won: '',
     loss: '',
+    isTie: false,
     moves: [
         [],
         []

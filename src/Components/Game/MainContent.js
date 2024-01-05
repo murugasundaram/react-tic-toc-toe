@@ -71,19 +71,42 @@ const MainContent = (props) => {
       }
     }
 
-    if(winner == '0' || winner == '1') {
+    console.log(p1Moves, p2Moves, winner);
 
+    let roundOver = false;
+    let isTie = false;
+
+    // game is done
+    if(winner == '0' || winner == '1') {
       if(theGame.totalRounds > theGame.currentRound) {
         let winnerText = `Round ${currentRound.id} Winner is ${players[winner]}`;
         dispatch(ModalAction.setContent(winnerText));
         dispatch(ModalAction.openModal())
       }
-      
+
+      roundOver = true;
+    }    
+
+    // game is tie
+    if((p1Moves.length + p2Moves.length == 9) && winner == null) {
+      if(theGame.totalRounds > theGame.currentRound) {
+        let winnerText = `Round ${currentRound.id} is Tie`;
+        dispatch(ModalAction.setContent(winnerText));
+        dispatch(ModalAction.openModal())
+      }
+
+      roundOver = true;
+      isTie = true;
+    }
+
+    // round over
+    if(roundOver) {
       dispatch(gameAction.setWinner({ 
         roundId: currentRound.id, 
-        winner: winner 
+        isTie,
+        winner 
       }));
-    }    
+    }
   }
 
   return (

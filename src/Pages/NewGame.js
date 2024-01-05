@@ -12,6 +12,8 @@ const NewGame = () => {
   const game = useSelector(state => state.game.games);
   const resGame = useSelector(state => state.result.results);
 
+  console.log(game)
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -33,13 +35,19 @@ const NewGame = () => {
       winningScore = scores[1];
     }
 
+    if(scores[1] == scores[0]) {
+      winner = 'Tie';
+      winningScore = scores[1];
+    }
+
     let scoreObj = {
       winner,
       winningScore
     }
 
     dispatch(resultAction.postResult(scoreObj));
-    storeTheScore(scoreObj);
+
+    if(winner != 'Tie') storeTheScore(scoreObj);
     navigate('/game/winner');
   }
 

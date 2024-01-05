@@ -19,13 +19,14 @@ const GameWinner = () => {
     return <div className="game-body bg-game overflow-y-hidden d-flex align-items-center justify-content-center">
         <div style={{ marginTop: '25vh' }}>
             <div className='text-white text-center congrts-head'>
-                Congratulations
+                 {lastRes && lastRes.winner !== 'Tie' && <div> Congratulations </div>}
             </div>
             <div className='stars-div'>
                 {starIcons.map((star, index) => star)}
             </div>
             <div className='text-white text-center won-head'>
-                {lastRes ? lastRes.winner : ''} Won {winningScore} stars
+                {lastRes && lastRes.winner !== 'Tie' && <div>{lastRes.winner} Won {winningScore} stars </div>}
+                {lastRes && lastRes.winner == 'Tie' ? 'The Game was Tie' : ''}
             </div>
         </div>
         <div className='text-center'> 

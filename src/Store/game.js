@@ -48,18 +48,23 @@ const gameSlice = createSlice({
             let looser = "1";
             let winner = "0";
 
-            if(data.winner == "1") {
-                looser = "0";
-                winner = "1";
+            if(data.isTie) {
+                looser = "";
+                winner = "";
+            } else {    
+                if(data.winner == "1") {
+                    looser = "0";
+                    winner = "1";
+                }
+                state.games.scores[winner] += 1;
             }
 
             state.games.rounds[(data.roundId - 1)].won = winner;
             state.games.rounds[(data.roundId - 1)].loss = looser;
             state.games.rounds[(data.roundId - 1)].isCompleted = true;
+            state.games.rounds[(data.roundId - 1)].isTie = data.isTie;
 
-            state.games.scores[winner] += 1;
             state.games.currentRound += 1;
-            
             state.table = TableData
         }
     }

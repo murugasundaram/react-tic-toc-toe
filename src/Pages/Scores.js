@@ -12,7 +12,8 @@ const Scores = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const sortResult = [...results].sort((a, b) => b.winningScore - a.winningScore);
+    const filterRes = results.filter(x => x.winner != 'Tie');
+    const sortResult = [...filterRes].sort((a, b) => b.winningScore - a.winningScore);
 
     const resetScores = () => {
         localStorage.removeItem('tic');

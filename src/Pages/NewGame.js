@@ -15,19 +15,15 @@ const NewGame = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const filterGame = game.filter(x => !x.isCompleted);
-  const currentGame = filterGame ? filterGame[0] : null;
-
-
   useEffect(() => {
-    if(currentGame && currentGame.currentRound > currentGame.totalRounds) { // close the game and announce winner
+    if(game && game.currentRound > game.totalRounds) { // close the game and announce winner
       gameOver();
     }
-  }, [currentGame])
+  }, [game])
 
   const gameOver = () => {
-    let scores = currentGame.scores;
-    let players = currentGame.players;
+    let scores = game.scores;
+    let players = game.players;
       
     let winner = players[0];
     let winningScore = scores[0];
@@ -50,21 +46,19 @@ const NewGame = () => {
   const storeTheScore = (scoreObj) => {
     let existScore = localStorage.getItem('tic');
     let score = existScore ? JSON.parse(existScore) : [];
-    console.log(score)
     score.push(scoreObj);
-    console.log(score)
     localStorage.setItem('tic', JSON.stringify(score))
   }
 
-  if(currentGame === null) {
+  if(game === null) {
     alert('There is no game to play')
     navigate('/')
   }
 
   return <div className="game-body bg-game overflow-y-hidden">
     
-        <Header game={currentGame} />
-        <MainContent game={currentGame} />
+        <Header game={game} />
+        <MainContent game={game} />
         <Footer />
         <Modal />
   </div>

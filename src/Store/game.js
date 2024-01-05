@@ -1,11 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { TableData } from "../Helpers/TableData";
 
+let newGameObj = {
+    players: ['Siva', 'Mani'],
+    totalRounds: 1,
+    currentRound: 1,
+    isCompleted: false,
+    rounds: [
+        {
+            id: 1,
+            won: '',
+            loss: '',
+            moves: [
+                [],
+                []
+            ],
+            playingNow: 0,
+            isCompleted: false,
+        }
+    ],
+    scores: [0, 0]
+};
+
 const gameSlice = createSlice({
     name: 'game',
     initialState: {
         table: TableData,
-        games: []
+        games: newGameObj
     },
     reducers : {
         playingGame(state, action) {
@@ -15,11 +36,11 @@ const gameSlice = createSlice({
             if(data.playingNow == 1) nxtPlay = 0;
 
             state.table[data.row][data.column].whoClicked = data.playingNow;
-            state.games[(data.gameId - 1)].rounds[(data.roundId - 1)].moves[data.playingNow].push(data.index)
-            state.games[(data.gameId - 1)].rounds[(data.roundId - 1)].playingNow = nxtPlay;
+            state.games.rounds[(data.roundId - 1)].moves[data.playingNow].push(data.index)
+            state.games.rounds[(data.roundId - 1)].playingNow = nxtPlay;
         }, 
         createNewGame(state, action) {
-            state.games.push(action.payload.newGame)
+            state.games = action.payload.newGame
         },
         setWinner(state, action) {
             let data = action.payload;
@@ -32,12 +53,12 @@ const gameSlice = createSlice({
                 winner = "1";
             }
 
-            state.games[(data.gameId - 1)].rounds[(data.roundId - 1)].won = winner;
-            state.games[(data.gameId - 1)].rounds[(data.roundId - 1)].loss = looser;
-            state.games[(data.gameId - 1)].rounds[(data.roundId - 1)].isCompleted = true;
+            state.games.rounds[(data.roundId - 1)].won = winner;
+            state.games.rounds[(data.roundId - 1)].loss = looser;
+            state.games.rounds[(data.roundId - 1)].isCompleted = true;
 
-            state.games[(data.gameId - 1)].scores[winner] += 1;
-            state.games[(data.gameId - 1)].currentRound += 1;
+            state.games.scores[winner] += 1;
+            state.games.currentRound += 1;
             
             state.table = TableData
         }

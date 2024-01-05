@@ -64,8 +64,7 @@ export const WinningCombo = [
     [3,5,7]
 ];
 
-export const newGameObj = {
-    id: 0,
+export let newGameObj = {
     players: ['', ''],
     totalRounds: 3,
     currentRound: 1,
@@ -74,7 +73,7 @@ export const newGameObj = {
     scores: [0, 0]
 };
 
-export const singleRound = {
+export let singleRound = {
     id: 0,
     won: '',
     loss: '',

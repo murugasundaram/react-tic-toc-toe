@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import red from "../../Assets/red.jpeg";
 import yellow from "../../Assets/yellow.jpeg";
 
+import { ReactComponent as Xicon } from "../../Assets/x-pack.svg";
+import { ReactComponent as Oicon } from "../../Assets/o.svg";
+
 const Header = (props) => {
   const p1 = props.game && props.game.players ? props.game.players[0] : '';
   const p2 = props.game && props.game.players ? props.game.players[1] : '';
@@ -23,7 +26,7 @@ const Header = (props) => {
             <div className="text-center ml-auto mr-auto player-middle">
               <span className="font-bold text-lg">{p1}</span>
               <span className="block text-sm player-identity">
-                <FontAwesomeIcon className="player1-icon" icon={faXmark} />
+                <Xicon className="player1-icon" />
               </span>
             </div>
           </div>
@@ -41,7 +44,7 @@ const Header = (props) => {
           <div className="text-center ml-auto mr-auto player-middle">
             <span className="font-bold text-lg">{p2}</span>
             <span className="block text-sm player-identity">
-              <FontAwesomeIcon className="player2-icon" icon={faO} />
+              <Oicon className="player2-icon" />
             </span>
           </div>
         </div>

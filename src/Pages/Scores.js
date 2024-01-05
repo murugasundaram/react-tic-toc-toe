@@ -12,6 +12,8 @@ const Scores = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    const sortResult = [...results].sort((a, b) => b.winningScore - a.winningScore);
+
     const resetScores = () => {
         localStorage.removeItem('tic');
         dispatch(resultAction.clearResult())
@@ -29,7 +31,7 @@ const Scores = () => {
                 Score Board
             </div>
             <div className='score-center'>
-                {results.map((res, index) => <WinnerRow key={index} winner={res} />)}
+                {sortResult.map((res, index) => <WinnerRow key={index} winner={res} />)}
             </div>
             <div className='score-bottom' onClick={() => navigate('/')}>
                 Play Again

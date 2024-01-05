@@ -48,6 +48,9 @@
   text-align: center;
   border-radius: 10px;
   min-width: 40px;
+  display: flex;
+  justify-content: center;
+  padding: 3px 0px;
 }
 
 .timer-div {
@@ -69,11 +72,13 @@
 }
 
 .player1-icon {
-  color: yellow;
+  fill: #feb438;
+  width: 17%;
 }
 
 .player2-icon {
-  color: red;
+  fill: white;
+  width: 17%;
 }
 
 .game-table tbody tr td  {
@@ -329,4 +334,14 @@ input.error {
   padding: 2px 15px;
   border-radius: 10px;
   font-size: 15px;
+}
+
+.x-icon {
+  fill: #feb438;
+  width: 50%;
+}
+
+.o-icon {
+  fill: black;
+  width: 50%;
 }

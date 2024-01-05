@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { gameAction } from "../../Store/game";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faO, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 import { WinningCombo } from "../../Helpers/TableData";
 import { ModalAction } from "../../Store/modal";
+import { ReactComponent as Xicon } from "../../Assets/x-pack.svg";
+import { ReactComponent as Oicon } from "../../Assets/o.svg";
+
 
 const MainContent = (props) => {
 
@@ -26,7 +27,6 @@ const MainContent = (props) => {
       index,
       row,
       column,
-      gameId: theGame.id,
       roundId: currentRound.id,
       playingNow: playingNow
     }
@@ -80,7 +80,6 @@ const MainContent = (props) => {
       }
       
       dispatch(gameAction.setWinner({ 
-        gameId: theGame.id,
         roundId: currentRound.id, 
         winner: winner 
       }));
@@ -97,9 +96,9 @@ const MainContent = (props) => {
               return <tr key={i}>
                 {t.map((tMin, iMin) => {
                   return <td key={iMin} onClick={() => onPlay(tMin.index, i, iMin)} className={`${tMin.class} ${tMin.whoClicked != null ? 'disabled' : ''}`}>
-                    <div className="flex items-center justify-center hover:bg-blue-300">
-                      {tMin.whoClicked == '0' ? <FontAwesomeIcon icon={faXmark} /> : ''}
-                      {tMin.whoClicked == '1' ? <FontAwesomeIcon icon={faO} /> : ''}
+                    <div className="flex items-center justify-center">
+                      {tMin.whoClicked == '0' ? <Xicon className="x-icon"  /> : ''}
+                      {tMin.whoClicked == '1' ? <Oicon className="o-icon" /> : ''}
                     </div>
                   </td>
                 })}

@@ -30,10 +30,15 @@ const FillDetails = () => {
         return
       } 
 
-      //let newGame = { ...newGameObj };
-      var newGame = Object.assign({}, newGameObj);
-      console.log('newGame', newGame)
-      newGame.id = game.length + 1;
+      var newGame = {
+        players: ['', ''],
+        totalRounds: 3,
+        currentRound: 1,
+        isCompleted: false,
+        rounds: [],
+        scores: [0, 0]
+      };
+
       newGame.players[0] = p1;
       newGame.players[1] = p2;
       newGame.totalRounds = parseInt(rounds);
@@ -44,6 +49,7 @@ const FillDetails = () => {
 
         newGame.rounds.push(round);
       }
+
 
       dispatch(gameAction.createNewGame({newGame}));
       navigate('/game/play')

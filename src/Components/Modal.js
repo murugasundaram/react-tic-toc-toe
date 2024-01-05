@@ -1,5 +1,4 @@
 // Modal.js
-import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalAction } from '../Store/modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

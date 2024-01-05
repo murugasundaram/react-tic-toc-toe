@@ -1,8 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { newGameObj } from "../Helpers/TableData";
 import { singleRound } from "../Helpers/TableData";
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { gameAction } from "../Store/game";
 
@@ -15,7 +13,6 @@ const FillDetails = () => {
 
     const [p1Error, setP1Error] = useState(false);
     const [p2Error, setP2Error] = useState(false);
-    const game = useSelector(state => state.game.games)
 
     const playNow = () => {
       if(p1 === "") {

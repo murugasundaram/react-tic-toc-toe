@@ -71,8 +71,6 @@ const MainContent = (props) => {
       }
     }
 
-    console.log(p1Moves, p2Moves, winner);
-
     let roundOver = false;
     let isTie = false;
 

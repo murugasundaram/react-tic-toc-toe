@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import backgroundImage from '../Assets/bg2.jpg'; // Import your background image
-import { faRotateRight, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faRotateRight } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 import WinnerRow from '../Components/Game/WinnerRow';
 import { useNavigate } from 'react-router-dom';

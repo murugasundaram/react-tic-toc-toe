@@ -1,8 +1,5 @@
-import { faO, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import red from "../../Assets/red.jpeg";
 import yellow from "../../Assets/yellow.jpeg";
-
 import { ReactComponent as Xicon } from "../../Assets/x-pack.svg";
 import { ReactComponent as Oicon } from "../../Assets/o.svg";
 

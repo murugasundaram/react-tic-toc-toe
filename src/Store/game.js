@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { TableData } from "../Helpers/TableData";
 
 let newGameObj = {
-    players: ['Siva', 'Mani'],
+    players: ['', ''],
     totalRounds: 1,
     currentRound: 1,
     isCompleted: false,

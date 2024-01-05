@@ -10,10 +10,6 @@ import { resultAction } from "../Store/result";
 
 const NewGame = () => {
   const game = useSelector(state => state.game.games);
-  const resGame = useSelector(state => state.result.results);
-
-  console.log(game)
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
